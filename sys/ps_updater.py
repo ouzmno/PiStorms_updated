@@ -134,5 +134,5 @@ try:
     json.dump(new_json, f)
     f.close()
 except:
-    print "ps_updater.py connection failed"
+    print("ps_updater.py connection failed")
     exit()
