@@ -25,12 +25,12 @@
 
 import urllib, json
 import subprocess
-import Configparser
+import configparser
 
 json_file = '/var/tmp/ps_data.json'
 cfg_file = '/usr/local/mindsensors/conf/msdev.cfg'
 
-config = Configparser.RawConfigParser()
+config = configparser.RawConfigParser()
 config.read(cfg_file)
 
 message_server = config.get('servers', 'message_server')

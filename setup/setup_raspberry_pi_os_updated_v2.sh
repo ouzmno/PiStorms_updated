@@ -72,13 +72,14 @@ sudo apt-get -qq -y update
 echo "Downloading and installing 15 required packages..."
 sudo apt-get  -y install build-essential git nmap mpg123 apache2 php7.4 libapache2-mod-php7.4 libapache2-mod-php\
                             python3-numpy python3-matplotlib python3-scipy python3-opencv \
-                            python3-dev python3-smbus python3-pip  
+                            python3-dev python3-smbus python3-pip 
 echo "Updating pip..."
 sudo pip install --upgrade pip
 echo "Downloading and installing 7 required Python packages..."
 sudo pip install --upgrade mindsensors-i2c
 sudo pip install RPi.GPIO wireless wifi ws4py flask imutils 
 sudo pip install pillow
+sudo pip install configparser
 
 
 echo "Copying files..."

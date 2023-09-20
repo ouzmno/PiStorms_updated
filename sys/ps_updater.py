@@ -27,13 +27,13 @@ import urllib, json
 import subprocess
 from datetime import datetime, timedelta
 import time
-import ConfigParser
+import configparser
 
 version_json_file = '/var/tmp/ps_versions.json'
 hw_version_file = '/var/tmp/.hw_version'
 cfg_file = '/usr/local/mindsensors/conf/msdev.cfg'
 
-config = ConfigParser.RawConfigParser()
+config = configparser.RawConfigParser()
 config.read(cfg_file)
 
 message_server = config.get('servers', 'message_server')
