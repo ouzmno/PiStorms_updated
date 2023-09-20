@@ -222,6 +222,7 @@ sudo rm -rf Adafruit_Python_ILI9341
 
 echo "Performing a few last configurations..."
 # enable kernel modules
+sudo touch /etc/modprobe.d/raspi-blacklist.conf
 sudo sed -i 's/blacklist i2c-bcm2708/#blacklist i2c-bcm2708/g' /etc/modprobe.d/raspi-blacklist.conf
 grep i2c-bcm2708 /etc/modules > /dev/null
 if [ $? != 0 ]
