@@ -24,7 +24,7 @@
 # 10/02/15    Deepak            Initial authoring.
 
 import urllib, json
-import commands
+import subprocess
 import ConfigParser
 
 json_file = '/var/tmp/ps_data.json'
@@ -38,7 +38,7 @@ link = message_server + "/messenger.php"
 
 cmd = 'cat /proc/cpuinfo | grep Serial | cut -d":" -f2 |awk \'{$1=$1};1\''
 
-serial = commands.getstatusoutput(cmd)[1]
+serial = subprocess.getstatusoutput(cmd)[1]
 
 #
 # connect to server and get the message

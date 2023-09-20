@@ -24,7 +24,7 @@
 # 10/02/15    Deepak            Initial authoring.
 
 import urllib, json
-import commands
+import subprocess
 from datetime import datetime, timedelta
 import time
 import ConfigParser
@@ -41,12 +41,12 @@ home_folder = config.get('msdev', 'homefolder')
 sw_version_file = home_folder+'/.version'
 
 link = message_server + "/versions.php"
-print "gathering info from: ", link
+print("gathering info from: ", link)
 
 cmd = 'cat /proc/cpuinfo | grep Revision | cut -d":" -f2 |awk \'{$1=$1};1\''
-rev = commands.getstatusoutput(cmd)[1]
+rev = subprocess.getstatusoutput(cmd)[1]
 cmd = 'cat /proc/cpuinfo | grep Serial | cut -d":" -f2 |awk \'{$1=$1};1\''
-serial = commands.getstatusoutput(cmd)[1]
+serial = subprocess.getstatusoutput(cmd)[1]
 
 try:
     f = open(version_json_file, 'r')

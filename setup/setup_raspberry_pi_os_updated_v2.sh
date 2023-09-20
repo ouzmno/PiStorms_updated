@@ -106,21 +106,21 @@ sleep 2
 sudo cp -p ../sys/swarmserver /usr/local/bin/
 
 # copy Python library files
-sudo cp -p ../sys/rmap.py /usr/local/lib/python3/dist-packages/
-sudo cp -p ../sys/rmapcfg.py /usr/local/lib/python3/dist-packages/
-sudo cp -p ../sys/scratch.py /usr/local/lib/python3/dist-packages/
-sudo cp -p ../sys/PiStorms.py /usr/local/lib/python3/dist-packages/
-sudo cp -p ../sys/PiStorms_GRX.py /usr/local/lib/python3/dist-packages/
-sudo cp -p ../sys/PiStormsCom.py /usr/local/lib/python3/dist-packages/
-sudo cp -p ../sys/PiStormsCom_GRX.py /usr/local/lib/python3/dist-packages/
-sudo cp -p ../sys/TouchScreenInput.py /usr/local/lib/python3/dist-packages/
-sudo cp -p ../sys/mindsensorsUI.py /usr/local/lib/python3/dist-packages/
-sudo cp -p ../sys/MS_ILI9341.py /usr/local/lib/python3/dist-packages/
-sudo cp -p ../sys/mindsensors.py /usr/local/lib/python3/dist-packages/
-sudo cp -p ../sys/MsDevices.py /usr/local/lib/python3/dist-packages/
-sudo cp -p ../sys/LegoDevices.py /usr/local/lib/python3/dist-packages/
-sudo cp -p ../sys/GroveDevices.py /usr/local/lib/python3/dist-packages/
-sudo cp -p ../sys/swarmclient.py /usr/local/lib/python3/dist-packages/
+sudo cp -p ../sys/rmap.py /usr/local/lib/python3.9/dist-packages/
+sudo cp -p ../sys/rmapcfg.py /usr/local/lib/python3.9/dist-packages/
+sudo cp -p ../sys/scratch.py /usr/local/lib/python3.9/dist-packages/
+sudo cp -p ../sys/PiStorms.py /usr/local/lib/python3.9/dist-packages/
+sudo cp -p ../sys/PiStorms_GRX.py /usr/local/lib/python3.9/dist-packages/
+sudo cp -p ../sys/PiStormsCom.py /usr/local/lib/python3.9/dist-packages/
+sudo cp -p ../sys/PiStormsCom_GRX.py /usr/local/lib/python3.9/dist-packages/
+sudo cp -p ../sys/TouchScreenInput.py /usr/local/lib/python3.9/dist-packages/
+sudo cp -p ../sys/mindsensorsUI.py /usr/local/lib/python3.9/dist-packages/
+sudo cp -p ../sys/MS_ILI9341.py /usr/local/lib/python3.9/dist-packages/
+sudo cp -p ../sys/mindsensors.py /usr/local/lib/python3.9/dist-packages/
+sudo cp -p ../sys/MsDevices.py /usr/local/lib/python3.9/dist-packages/
+sudo cp -p ../sys/LegoDevices.py /usr/local/lib/python3.9/dist-packages/
+sudo cp -p ../sys/GroveDevices.py /usr/local/lib/python3.9/dist-packages/
+sudo cp -p ../sys/swarmclient.py /usr/local/lib/python3.9/dist-packages/
 
 # copy web interface files
 sudo mkdir -p /var/www
@@ -160,6 +160,7 @@ sudo cp -p ../programs/missing.png /usr/local/mindsensors/images/
 sudo cp -p ../artwork/* /usr/local/mindsensors/images/
 
 # copy desktop background
+sudo mkdir -p /usr/share/raspberrypi-artwork/
 sudo cp -p ../artwork/* /usr/share/raspberrypi-artwork
 
 # copy Scratch programs
