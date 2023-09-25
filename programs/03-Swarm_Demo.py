@@ -55,7 +55,7 @@ if __name__ == '__main__':
         #
         if ('type' in msg_array) and (msg_array['type'] == 'peermessage'):
             start_time = time.time()
-            print "Peer says: ", msg_array['message']
+            print("Peer says: ", msg_array['message'])
             sys.stdout.flush()
             msg =  json.loads(str(msg_array['message']))
             if (msg['action'] == "move"):
@@ -66,7 +66,7 @@ if __name__ == '__main__':
                 old_x = smiley_x
                 old_y = smiley_y
         else:
-            print "System Message: ", msg_array['message']
+            print("System Message: ", msg_array['message'])
 
         sys.stdout.flush()
 
@@ -101,14 +101,14 @@ if __name__ == '__main__':
     # Function parameters:
     # SwarmClient(messageHandler, <optional server>)
     #
-    print "creating SwarmClient "
+    print("creating SwarmClient ")
     sys.stdout.flush()
     try:
         ws = SwarmClient(myHandler)
         #
         #
         if not ( ws.isRegistered ):
-            print "registration failed"
+            print("registration failed")
             sys.stdout.flush()
             m = ["Swarm-Demo", "Swarm server registration failed."]
             psm.screen.askQuestion(m,["OK"])

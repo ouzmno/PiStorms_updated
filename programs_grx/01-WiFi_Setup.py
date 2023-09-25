@@ -29,9 +29,9 @@ from PiStorms_GRX import PiStorms_GRX
 from TouchScreenInput import TouchScreenInput
 from wireless import Wireless
 from wifi import Cell
-import ConfigParser
+import configparser
 
-config = ConfigParser.RawConfigParser()
+config = configparser.RawConfigParser()
 config.read("/usr/local/mindsensors/conf/msdev.cfg")
 homefolder = config.get("msdev", "homefolder")
 currentdir = os.path.join(homefolder, "programs")
@@ -305,7 +305,7 @@ def disconnect():
     # Reload adapter to apply settings
     reload_adapter()
 
-# Ask if the user really wants to dissconnect
+# Ask if the user really wants to disconnect
 def disconnect_question():
     # Clear the screen and display the information
     psm.screen.fillRect(0, 0, 320, 240, fill = (0,0,0), display = False)

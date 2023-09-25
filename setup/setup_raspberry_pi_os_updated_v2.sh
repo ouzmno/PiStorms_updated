@@ -70,7 +70,7 @@ echo "Depending on your internet connection, the following few steps may take se
 echo "Updating package lists..."
 sudo apt-get -qq -y update
 echo "Downloading and installing 15 required packages..."
-sudo apt-get  -y install build-essential git nmap mpg123 apache2 php7.4 libapache2-mod-php7.4 libapache2-mod-php\
+sudo apt-get -y install build-essential git nmap mpg123 apache2 php7.4 libapache2-mod-php7.4 libapache2-mod-php\
                             python3-numpy python3-matplotlib python3-scipy python3-opencv \
                             python3-dev python3-smbus python3-pip 
 echo "Updating pip..."
@@ -206,8 +206,8 @@ then
     (sudo crontab -l -u root 2>/dev/null; echo "2 */2 * * * python3 /usr/local/bin/ps_updater.py") | sudo crontab - -u root
 fi
 # run messenger and updater once
-python /usr/local/bin/ps_messenger_check.py > /dev/null
-python /usr/local/bin/ps_updater.py > /dev/null
+python3 /usr/local/bin/ps_messenger_check.py > /dev/null
+python3 /usr/local/bin/ps_updater.py > /dev/null
 
 
 echo "Installing display libraries..."
@@ -215,7 +215,7 @@ echo "Installing display libraries..."
 cd ~
 git clone -qq https://github.com/adafruit/Adafruit_Python_ILI9341.git
 cd Adafruit_Python_ILI9341
-sudo python3 setup.py install &> /dev/null
+sudo python setup.py install &> /dev/null
 cd ..
 sudo rm -rf Adafruit_Python_ILI9341
 

@@ -580,8 +580,8 @@ def save_read_data(command_string):
             x = x + 1
 
 def rmap_print(message):
-    print str(time.strftime("%d/%m/%Y-"))+str(time.strftime("%H:%M:%S"))+":"+message
+    print(str(time.strftime("%d/%m/%Y-"))+str(time.strftime("%H:%M:%S"))+":"+message)
     sys.stdout.flush()
 
 def print_dict():
-    print dict
+    print(dict)

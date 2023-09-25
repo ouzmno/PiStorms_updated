@@ -1,5 +1,9 @@
 # PiStorms
 
+___
+
+This is **original** PiStorms *README.md*.
+
 The [PiStorms](http://www.mindsensors.com/content/78-pistorms-lego-interface) is a robotics platform. It enables you to create robots using LEGO Mindstorms parts, and control it on a Raspberry Pi with Python. Besides its 4 motor ports, 4 sensor ports, and all the benefits of the Raspberry Pi, the PiStorms lets you do even more. It has a touchscreen for easy visual feedback and touch input. It has a convenient web interface to program and control the device, even accessible on mobile devices.
 
 We have many [blog posts](http://www.mindsensors.com/blog/PiStorms) on our website about the PiStorms. These include tutorials and project ideas. There is also a handy [getting started guide](http://www.mindsensors.com/content/72-getting-started-with-pistorms).
@@ -24,3 +28,20 @@ When it configures the VNC server, it might ask for a password. If so please ent
 Now you can browse the examples in the PiStorms/programs folder.
 
 To write your own Python programs, start with this [tutorial](http://www.mindsensors.com/blog/how-to/pistorms-python-programming-tutorial), then refer to the [API reference](http://www.mindsensors.com/reference/PiStorms/html/).
+
+___
+
+**Updated** *README.md*
+
+As prepared PiStorms image not available anymore, there are two ways to get PiStorms softwares. One is to buy PiStorms starter kit (a SD card with the image written included). Another is to execute 'setup.sh' with sudo privilege on whatever raspian systems.
+
+I have updated the bash file and renamed as *setup_raspberry_pi_os_updated_v2.sh*. The easiest way to run the script is to git this repository and go to the `PiStorms_UPDATED/setup/` where the bash file is located.
+
+Breakdown of the updates.
+
+- updated python2 to python3.9
+- updated ConfigParser to configparser as the name convention changed on python3
+- updated commands to subprocess as the former module no more supported on python3
+
+___
+

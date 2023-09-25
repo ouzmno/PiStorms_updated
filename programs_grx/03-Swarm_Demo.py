@@ -24,7 +24,7 @@
 # 01/01/16   Deepak     Initial development.
 #
 import json, time, os, sys, inspect, thread
-import ConfigParser
+import configparser
 from ws4py.client.threadedclient import WebSocketClient
 from swarmclient import *
 from PiStorms_GRX import PiStorms_GRX
@@ -40,7 +40,7 @@ doExit = False
 bmpw = 60
 old_x = 110
 old_y = 80
-config = ConfigParser.RawConfigParser()
+config = configparser.RawConfigParser()
 config.read("/usr/local/mindsensors/conf/msdev.cfg")
 homefolder = config.get("msdev", "homefolder")
 currentdir = os.path.join(homefolder, "programs")
@@ -60,7 +60,7 @@ if __name__ == '__main__':
         #
         if ('type' in msg_array) and (msg_array['type'] == 'peermessage'):
             start_time = time.time()
-            print "Peer says: ", msg_array['message']
+            print ("Peer says: ", msg_array['message'])
             sys.stdout.flush()
             msg =  json.loads(str(msg_array['message']))
             if (msg['action'] == "move"):
@@ -71,7 +71,7 @@ if __name__ == '__main__':
                 old_x = smiley_x
                 old_y = smiley_y
         else:
-            print "System Message: ", msg_array['message']
+            print ("System Message: ", msg_array['message'])
 
         sys.stdout.flush()
 
@@ -92,7 +92,7 @@ if __name__ == '__main__':
     psm.screen.clearScreen()
     psm.screen.fillBmp(old_x, old_y, bmpw, bmpw, path = currentdir+'/'+"smiley.png")
     peers = len(nbrs_list)
-    psm.screen.drawAutoText( str(peers) + " neighbor(s) found", 15, 200, fill=(255, 255, 255), size = 18)
+    psm.screen.drawAutoText(str(peers) + " neighbor(s) found", 15, 200, fill=(255, 255, 255), size = 18)
     psm.screen.drawAutoText("Press Go to Exit", 15, 218, fill=(255, 255, 255), size = 18)
 
     # print neighbor information on screen
@@ -106,14 +106,14 @@ if __name__ == '__main__':
     # Function parameters:
     # SwarmClient(messageHandler, <optional server>)
     #
-    print "creating SwarmClient "
+    print("creating SwarmClient ")
     sys.stdout.flush()
     try:
         ws = SwarmClient(myHandler)
         #
         #
-        if not ( ws.isRegistered ):
-            print "registration failed"
+        if not ws.isRegistered:
+            print("registration failed")
             sys.stdout.flush()
             m = ["Swarm-Demo", "Swarm server registration failed."]
             psm.screen.askQuestion(m,["OK"])
@@ -122,7 +122,7 @@ if __name__ == '__main__':
         old_tsx = 0
         old_tsy = 0
         while doExit == False:
-            if ( psm.screen.isTouched() ):
+            if psm.screen.isTouched():
                 #
                 # someone touched on the screen.
                 #

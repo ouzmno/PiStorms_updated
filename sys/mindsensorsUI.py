@@ -38,7 +38,7 @@ import MS_ILI9341 as TFT
 from Adafruit_ILI9341 import ILI9341_INVOFF
 import Adafruit_GPIO as GPIO
 import Adafruit_GPIO.SPI as SPI
-import ConfigParser
+import configparser
 
 ## @package mindsensorsUI
 #  This module contains classes and functions necessary for use of LCD touchscreen on mindsensors.com products
@@ -111,7 +111,7 @@ class mindsensorsUI():
     #  screen = mindsensorsUI()
     #  @endcode
     def __init__(self, name = "PiStorms", rotation = 3):
-        config = ConfigParser.RawConfigParser()
+        config = configparser.RawConfigParser()
         config.read("/usr/local/mindsensors/conf/msdev.cfg")
         if "GRX" in config.get('msdev', 'device'):
             self.comm = GRXCom
@@ -846,9 +846,9 @@ class mindsensorsUI():
         oldMode = self.currentMode
         self.setMode(self.PS_MODE_POPUP)
         if(len(options)>=4):
-            print "warning!, buttons may be too small to read"
+            print ("warning!, buttons may be too small to read")
         if(len(options)<=0 and not goBtn):
-            print "warning!, no options will leave this pop-up stuck"
+            print ("warning!, no options will leave this pop-up stuck")
         if goBtn:
             keyPressCount = self.comm.getKeyPressCount()
         while(True):
@@ -1036,7 +1036,7 @@ if __name__ == '__main__':
                 time.sleep(2)
                 psb.dumpTerminal()
     except KeyboardInterrupt:
-        print "\nQuitting..."
+        print ("\nQuitting...")
         psb.setMode(psb.PS_MODE_TERMINAL)
         psb.termPrintln("Exiting Program...")
         sys.exit(0)

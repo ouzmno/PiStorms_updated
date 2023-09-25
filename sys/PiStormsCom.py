@@ -25,7 +25,7 @@
 
 from mindsensors_i2c import mindsensors_i2c
 import time, numpy
-import ConfigParser
+import configparser
 
 class PSSensor():
     PS_SENSOR_TYPE_NONE = 0
@@ -639,7 +639,7 @@ class PiStormsCom(object):
             self.bankA.writeByte(self.PS_Command,self.R)
             self.bankB.writeByte(self.PS_Command,self.R)
 
-        config = ConfigParser.RawConfigParser()
+        config = configparser.RawConfigParser()
         config.read("/usr/local/mindsensors/conf/msdev.cfg")
         if "GRX" in config.get('msdev', 'device'):
             self.PS_BattV = 0xC1

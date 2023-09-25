@@ -25,11 +25,11 @@
 # July 2017  Seth      Clean, update for GRX
 
 import os, socket
-import ConfigParser
+import configparser
 from PiStorms_GRX import PiStorms_GRX
 psm = PiStorms_GRX()
 
-config = ConfigParser.RawConfigParser()
+config = configparser.RawConfigParser()
 config.read("/usr/local/mindsensors/conf/msdev.cfg")
 homefolder = config.get("msdev", "homefolder")
 try:
