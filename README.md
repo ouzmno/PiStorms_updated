@@ -33,7 +33,7 @@ ___
 
 **Updated** *README.md*
 
-As prepared PiStorms image not available anymore, there are two ways to get PiStorms softwares. One is to buy PiStorms starter kit (a SD card with the image written included). Another is to execute 'setup.sh' with sudo privilege on whatever raspian systems.
+As prepared PiStorms image not available anymore, there are two ways to get PiStorms softwares. One is to buy PiStorms starter kit (a SD card with the image written included). Another is to execute 'setup.sh' with sudo privilege on whatever raspbian systems.
 
 I have updated the bash file and renamed as *setup_raspberry_pi_os_updated_v2.sh*. The easiest way to run the script is to git this repository and go to the `PiStorms_UPDATED/setup/` where the bash file is located.
 
